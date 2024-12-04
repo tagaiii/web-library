@@ -1,12 +1,11 @@
 import { useContext } from 'react'
 import { Navigate } from 'react-router-dom'
-import { AuthContext } from './AuthProvider' // Импортируем контекст
-
+import { AuthContext } from './AuthProvider'
 const ProtectedRoute = ({ children }) => {
   const { user } = useContext(AuthContext)
 
   if (!user) {
-    return <Navigate to="/login" /> // Перенаправляем на страницу логина
+    return <Navigate to="/login" />
   }
 
   return children
